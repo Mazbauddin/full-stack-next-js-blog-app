@@ -202,6 +202,67 @@ const Navbar = () => {
           </ul>
         </div>
         {/* Mobile Device */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden fixed inset-0 bg-white z-50 overflow-y-auto">
+            <div className="flex justify-end p-4">
+              <button
+                className="p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <HiOutlineX size={24} />
+              </button>
+            </div>
+            <ul className="flex flex-col p-4 space-y-2">
+              {mainNavItems.map((item) => {
+                const isActive = pathName === item.href;
+                return (
+                  <li key={item.label} className="group relative">
+                    <Link
+                      href={item.href}
+                      className={`inline-flex items-center text-sm uppercase font-medium rounded-md text-gray-500 hover:text-primary ${isActive ? "text-primary" : ""}`}
+                    >
+                      {item.label}
+                      {item.subItems && (
+                        <BsChevronDown
+                          size={16}
+                          className="ml-1 group-hover:rotate-180 transition-transform"
+                        />
+                      )}
+                    </Link>
+                    {item.subItems && (
+                      <ul className="absolute left-0 top-full mt-0 hidden group-hover:block bg-white shadow-lg rounded-md overflow-hidden z-20 min-w-40 border border-gray-200">
+                        {item.subItems.map((subItem) => (
+                          <li key={subItem.label} className="mt-1">
+                            <Link
+                              href={subItem.href}
+                              className="block px-4 py-2 text-sm uppercase text-gray-700 hover:bg-gray-100 transition-colors"
+                            >
+                              {subItem.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                );
+              })}
+              <li>
+                {/* Clerk Authentication  Default*/}
+                <SignedOut>
+                  <SignInButton mode="modal">
+                    <button className="px-5 py-2 border border-gray-300 text-white bg-green-600 rounded-md hover:bg-green-700 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
+                      Sign In
+                    </button>
+                  </SignInButton>
+                </SignedOut>
+
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+              </li>
+            </ul>
+          </div>
+        )}
       </nav>
     </header>
   );
