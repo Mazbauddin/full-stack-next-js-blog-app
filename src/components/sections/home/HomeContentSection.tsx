@@ -2,6 +2,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import { IArticle } from "@/models/Article";
 import ArticleCardPrimary from "./ArticleCardPrimary";
 import Link from "next/link";
+import ArticleCardSecondary from "./ArticleCardSecondary";
 
 interface HomeContentSectionProps {
   editorPicksPrimary?: IArticle;
@@ -31,6 +32,13 @@ const HomeContentSection = ({
               >
                 All Featured
               </Link>
+            </div>
+            {/* Small Feature Article */}
+            <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
+              {editorPicksSecondary &&
+                editorPicksSecondary.map((article, index) => (
+                  <ArticleCardSecondary key={index} article={article} />
+                ))}
             </div>
           </div>
         </div>
