@@ -1,3 +1,4 @@
+import FeaturedSliderSection from "@/components/sections/home/FeaturedSliderSection";
 import HomeContentSection from "@/components/sections/home/HomeContentSection";
 import { getHomePageData } from "@/lib/data";
 
@@ -26,6 +27,10 @@ export default async function Home() {
             trendingArticles={trendingArticles}
           />
         )}
+
+      {sliderArticles.length > 0 && (
+        <FeaturedSliderSection articles={sliderArticles} />
+      )}
     </div>
   );
 }
