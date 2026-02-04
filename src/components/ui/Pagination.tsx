@@ -1,5 +1,5 @@
 import React from "react";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 interface PaginationProps {
   currentPage: number;
@@ -24,13 +24,32 @@ const Pagination = ({
           <button
             disabled={currentPage === 1}
             onClick={() => onPageChange(currentPage - 1)}
-            className={`px-4 py-2 rounded-md flex items-center font-semibold transition-colors ${currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "hover:text-primary cursor-pointer"}`}
+            className={`px-4 py-2 rounded-md flex items-center font-semibold justify-center transition-colors ${currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "hover:text-primary cursor-pointer"}`}
           >
             <FaArrowLeft size={14} />
           </button>
         </li>
 
-        {}
+        {pageNumbers.map((number) => (
+          <li key={number}>
+            <button
+              onClick={() => onPageChange(number)}
+              className={`px-4 py-2 rounded-md flex items-center font-semibold justify-center transition-colors ${currentPage === number ? "text-primary cursor-default" : "hover:text-primary cursor-pointer"}`}
+            >
+              {number}
+            </button>
+          </li>
+        ))}
+
+        <li>
+          <button
+            disabled={currentPage === totalPages}
+            onClick={() => onPageChange(currentPage + 1)}
+            className={`px-4 py-2 rounded-md flex items-center font-semibold justify-center transition-colors ${currentPage === totalPages ? "text-gray-400 cursor-not-allowed" : "hover:text-primary cursor-pointer"}`}
+          >
+            <FaArrowRight size={14} />
+          </button>
+        </li>
       </ul>
     </div>
   );
