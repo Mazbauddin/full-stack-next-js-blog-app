@@ -3,6 +3,8 @@ import { IArticle } from "@/models/Article";
 import ArticleCardPrimary from "./ArticleCardPrimary";
 import Link from "next/link";
 import ArticleCardSecondary from "./ArticleCardSecondary";
+import TrendingArticlesItem from "./TrendingArticlesItem";
+import { FaArrowRight } from "react-icons/fa";
 
 interface HomeContentSectionProps {
   editorPicksPrimary?: IArticle;
@@ -43,7 +45,25 @@ const HomeContentSection = ({
           </div>
         </div>
         {/* Right Side */}
-        <div className="">Trending</div>
+        <div className="w-full md:w-3/12 px-4">
+          <SectionTitle title="Trending" />
+          <ol className="list-none p-0">
+            {trendingArticles.map((article, index) => (
+              <TrendingArticlesItem
+                key={index}
+                article={article}
+                index={index}
+              />
+            ))}
+          </ol>
+          <Link
+            href="/archive"
+            className="text-sm text-primary hover:underline uppercase transition-colors inline-flex items-center mt-4"
+          >
+            See All Trending
+            <FaArrowRight className="ml-2" size={12} />
+          </Link>
+        </div>
       </div>
     </section>
   );
