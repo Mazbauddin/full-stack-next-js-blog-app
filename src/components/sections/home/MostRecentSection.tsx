@@ -5,6 +5,7 @@ import { useState } from "react";
 import ArticleCardMostRecent from "./ArticleCardMostRecent";
 import MostRecentGridArticles from "./MostRecentGridArticles";
 import Pagination from "@/components/ui/Pagination";
+import TrendingArticlesItem from "./TrendingArticlesItem";
 
 interface MostRecentSectionProps {
   mostRecentArticles: IArticle[];
@@ -42,7 +43,7 @@ const MostRecentSection = ({
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:space-x-8">
           {/* left side */}
-          <div className="">
+          <div className="w-full lg:w-8/12 mb-8 lg:mb-0">
             <SectionTitle title="Most Recent" />
             <div className="">
               {mostRecentArticles.map((article) => (
@@ -66,6 +67,21 @@ const MostRecentSection = ({
             />
           </div>
           {/* right side */}
+
+          <div className="w-full lg:w-4/12 lg:pl-8">
+            <div className="sticky top-24 lg:h-fit lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+              <SectionTitle title="Popular Articles" />
+              <div className="list-none p-0">
+                {popularArticles.map((article, index) => (
+                  <TrendingArticlesItem
+                    key={index}
+                    article={article}
+                    index={index}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
