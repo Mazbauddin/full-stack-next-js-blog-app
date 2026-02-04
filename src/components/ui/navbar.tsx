@@ -188,7 +188,7 @@ const Navbar = () => {
                         <li key={subItem.label} className="mt-1">
                           <Link
                             href={subItem.href}
-                            className="block px-4 py-2 text-sm uppercase text-gray-700 hover:bg-gray-100 transition-colors"
+                            className="block px-4 py-2 text-sm uppercase text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors"
                           >
                             {subItem.label}
                           </Link>
