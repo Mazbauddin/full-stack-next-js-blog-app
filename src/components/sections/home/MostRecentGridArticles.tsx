@@ -11,7 +11,7 @@ interface MostRecentGridArticlesProps {
 const MostRecentGridArticles = ({ article }: MostRecentGridArticlesProps) => {
   return (
     <article className="flex flex-col sm:flex-row mb-6 items-start">
-      <figure className="flex-shrink-0 w-full sm:w-5/12 h-40 sm:h-auto overflow-hidden rounded-lg mb-4 sm:mb-0 sm:mr-6">
+      <figure className="shrink-0 w-full sm:w-5/12 h-40 sm:h-auto overflow-hidden rounded-lg mb-4 sm:mb-0 sm:mr-6">
         <Link
           href={`/articles/${article._id}`}
           className="block w-full h-full aspect-square"
@@ -26,7 +26,7 @@ const MostRecentGridArticles = ({ article }: MostRecentGridArticlesProps) => {
           />
         </Link>
       </figure>
-      <div className="flex-grow w-full sm:w-7/12">
+      <div className="grow w-full sm:w-7/12">
         <h5 className="text-lg font-bold mb-2 leading-tight">
           <Link
             href={`/articles/${article._id}`}
