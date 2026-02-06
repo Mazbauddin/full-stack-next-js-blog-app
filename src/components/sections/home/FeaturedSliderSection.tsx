@@ -18,7 +18,7 @@ interface FeaturedSliderSectionProps {
 
 const FeaturedSliderSection = ({ articles }: FeaturedSliderSectionProps) => {
   return (
-    <section className="mb-24 py-12 text-gray-800">
+    <section className="mb-8 py-12 text-gray-800">
       <div className="px-4 sm:px-6 lg:px-8">
         <Swiper
           slidesPerView={1}

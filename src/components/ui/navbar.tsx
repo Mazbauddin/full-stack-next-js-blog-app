@@ -32,7 +32,7 @@ const mainNavItems: NavItem[] = [
   { label: "Design", href: "/categories/design" },
   { label: "Technology", href: "/categories/technology" },
   { label: "Culture", href: "/categories/culture" },
-  { label: "Contact", href: "/contact" },
+
   {
     label: "More",
     href: "#",
@@ -43,6 +43,7 @@ const mainNavItems: NavItem[] = [
       { label: "Terms of Service", href: "/terms-of-service" },
     ],
   },
+  { label: "Contact", href: "/contact" },
 ];
 const Navbar = () => {
   const pathName = usePathname();
@@ -183,7 +184,7 @@ const Navbar = () => {
                     )}
                   </Link>
                   {item.subItems && (
-                    <ul className="absolute left-0 top-full mt-0 hidden group-hover:block bg-white shadow-lg rounded-md overflow-hidden z-20 min-w-40 border border-gray-200">
+                    <ul className="absolute left-0 top-full mt-0 hidden group-hover:block bg-white shadow-lg rounded-md overflow-hidden z-20 min-w-50 border border-gray-200">
                       {item.subItems.map((subItem) => (
                         <li key={subItem.label} className="mt-1">
                           <Link
