@@ -1,8 +1,8 @@
 import { Article, ArticleMeta } from "@/types/article";
-import mongoose, { Document, Model, Schema } from "mongoose";
+import mongoose, { Document, Model, Schema, Types } from "mongoose";
 
 export interface IArticle extends Omit<Article, "_id">, Document {
-  _id: string;
+  _id: Types.ObjectId;
   meta: ArticleMeta;
 }
 
