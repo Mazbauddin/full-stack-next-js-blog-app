@@ -11,7 +11,7 @@ const ArticleCardPrimary = ({ article }: ArticleCardPrimaryProps) => {
   return (
     <article className="mb-8 md:mb-0">
       <figure className="mb-4">
-        <Link href={`/article/${article._id}`}>
+        <Link href={`/articles/${article._id}`}>
           <Image
             src={article.image}
             alt={article.title}
@@ -24,7 +24,7 @@ const ArticleCardPrimary = ({ article }: ArticleCardPrimaryProps) => {
       </figure>
       <h3 className="text-xl font-bold mb-3 leading-tight">
         <Link
-          href={`/article/${article._id}`}
+          href={`/articles/${article._id}`}
           className="text-[#2E2E2E] hover:text-primary transition-colors"
         >
           {article.title}

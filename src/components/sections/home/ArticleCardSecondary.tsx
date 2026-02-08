@@ -11,7 +11,7 @@ const ArticleCardSecondary = ({ article }: ArticleCardSecondaryProps) => {
   return (
     <article className="flex mb-6 first:mt-0 mt-6 md:mt-0">
       <figure className="shrink-0 w-28 h-24 sm:w-32 sm:h-28 md:w-36 md:h-32 lg:w-40 lg:h-36 mr-4">
-        <Link href={`/article/${article._id}`} className="block w-full h-full">
+        <Link href={`/articles/${article._id}`} className="block w-full h-full">
           <Image
             src={article.image}
             alt={article.title}
@@ -31,7 +31,7 @@ const ArticleCardSecondary = ({ article }: ArticleCardSecondaryProps) => {
         )}
         <h5 className="text-base font-bold mb-2 leading-tight">
           <Link
-            href={`/article/${article._id}`}
+            href={`/articles/${article._id}`}
             className="text-[#2e2e2e] hover:text-primary transition-colors duration-200"
           >
             {article.title}

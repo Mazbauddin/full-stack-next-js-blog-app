@@ -13,7 +13,7 @@ const ArticleCardGrid = ({ article }: ArticleCardGridProps) => {
     <article className="flex flex-col sm:flex-row mb-6 items-start">
       <figure className="shrink-0 w-full h-40 sm:w-5/12 sm:h-auto overflow-hidden rounded-lg mb-4 sm:mb-0 sm:mr-6">
         <Link
-          href={`/article/${article._id}`}
+          href={`/articles/${article._id}`}
           className="block w-full h-full aspect-square"
         >
           <Image
@@ -30,7 +30,7 @@ const ArticleCardGrid = ({ article }: ArticleCardGridProps) => {
       <div className="grow w-full sm:w-7/12">
         <h5 className="text-lg font-bold mb-2 leading-tight">
           <Link
-            href={`/article/${article._id}`}
+            href={`/articles/${article._id}`}
             className="text-[#2e2e2e] hover:text-primary transition-colors duration-200"
           >
             {article.title}

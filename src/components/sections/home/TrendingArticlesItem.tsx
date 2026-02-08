@@ -19,7 +19,7 @@ const TrendingArticlesItem = ({
       <div className="">
         <h5 className="text-base font-bold mb-2 leading-tight">
           <Link
-            href={`/article/${article._id}`}
+            href={`/articles/${article._id}`}
             className="text-[#2e2e2e] hover:text-primary transition-colors duration-200"
           >
             {article.title}
