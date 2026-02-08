@@ -17,9 +17,10 @@ interface NavItem {
 
 const mainNavItems: NavItem[] = [
   { label: "Home", href: "/" },
+  { label: "All Articles", href: "/articles" },
   {
     label: "Categories",
-    href: "/categories",
+    href: "#",
     subItems: [
       { label: "Politics", href: "/categories/politics" },
       { label: "Health", href: "/categories/health" },

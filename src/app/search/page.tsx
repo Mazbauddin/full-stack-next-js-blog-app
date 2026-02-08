@@ -61,7 +61,7 @@ const SearchPage = async ({
                   <h2 className="text-xl font-bold text-gray-800 mb-2 h-14 overflow-hidden">
                     <Link
                       href={`/articles/${article._id}`}
-                      className="hover:text-blue-600 transition-colors"
+                      className="hover:text-primary transition-colors"
                     >
                       {article.title}
                     </Link>
