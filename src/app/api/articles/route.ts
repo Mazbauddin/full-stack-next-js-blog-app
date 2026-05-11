@@ -1,20 +1,22 @@
 import { connectDB } from "@/lib/mongodb";
 import ArticleModel, { IArticle } from "@/models/Article";
 import { NextRequest, NextResponse } from "next/server";
-import { FilterQuery } from "mongoose";
 
 export async function GET(request: NextRequest) {
   try {
     await connectDB();
 
-    const { searchParams } = request.nextUrl;
+    const searchParams = request.nextUrl.searchParams;
     const query = searchParams.get("q");
     const category = searchParams.get("category");
 
-    const filter: FilterQuery<IArticle> = {};
+    const filter: Record<string, any> = {};
 
     if (category) {
-      filter["meta.category"] = { $regex: `^${category}`, $options: "i" };
+      filter["meta.category"] = {
+        $regex: `^${category}`,
+        $options: "i",
+      };
     }
 
     if (query) {

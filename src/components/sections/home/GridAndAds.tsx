@@ -16,7 +16,7 @@ const GridAndAds = ({ articles }: GridAndAdsProps) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
             {/* Article Grid */}
             {articles.map((article) => (
-              <ArticleCardGrid key={article._id} article={article} />
+              <ArticleCardGrid key={article._id.toString()} article={article} />
             ))}
           </div>
         </div>
