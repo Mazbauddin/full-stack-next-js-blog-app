@@ -3,7 +3,9 @@ import mongoose from "mongoose";
 const MONGODB_URI = process.env.MONGODB_URI as string;
 
 if (!MONGODB_URI) {
-  throw new Error("Please define the MONGODB_URI environment variable");
+  throw new Error(
+    "Please define the MONGODB_URI environment variable inside .env.local",
+  );
 }
 
 type CachedMongoose = {
@@ -35,7 +37,7 @@ export async function connectDB(): Promise<typeof mongoose> {
       return res;
     })
     .catch((error) => {
-      console.error("Error connecting to MongoDB:", error);
+      console.error("MongoDB connection error:", error);
       cached.promise = null;
       throw error;
     });

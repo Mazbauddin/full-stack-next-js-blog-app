@@ -63,7 +63,7 @@ const Navbar = () => {
               className="flex items-center text-2xl font-semibold text-gray-900 hover:text-primary transition-colors duration-300"
             >
               <FaBlog />
-              <span className="ml-1">Blogs</span>
+              <span className="ml-1">Invisible Blogs</span>
             </Link>
           </h1>
           {/* Top header Right Side */}
@@ -152,7 +152,7 @@ const Navbar = () => {
                 className="flex items-center text-2xl font-semibold text-gray-900 hover:text-primary transition-colors duration-300"
               >
                 <FaBlog />
-                <span className="ml-1">Blogs</span>
+                <span className="ml-1">Invisible Blogs</span>
               </Link>
             </h1>
             <button

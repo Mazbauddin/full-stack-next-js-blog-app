@@ -18,7 +18,7 @@ const ArticlePage = async () => {
   return (
     <section className="blog-container">
       <h1 className="text-4xl font-bold mb-8">Latest Articles</h1>
-
+      {/* Article List Here */}
       <ArticleList initialArticles={serializedArticles} />
     </section>
   );
